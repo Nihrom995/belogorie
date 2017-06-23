@@ -35,7 +35,7 @@ gulp.task('templates:compile', function buildHTML() {
 /*---------------------- SASS Compile ------------------------*/
 gulp.task('styles:compile', function () {
     return gulp.src('source/styles/main.scss')
-        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(sass().on('error', sass.logError)) //{outputStyle: 'compressed'}
         .pipe(autoprefixer())
         .pipe(rename("main.min.css"))
         .pipe(gulp.dest('build/css'));
@@ -44,7 +44,7 @@ gulp.task('styles:compile', function () {
 /*---------------------- Sprites ------------------------*/
 gulp.task('sprite', function (cb) {
 
-    const spriteData = gulp.src('source/images/icons/*.png').pipe(spritesmith({
+    const spriteData = gulp.src('source/images/icons/**/*.png').pipe(spritesmith({
         imgName: 'sprite.png',
         imgPath:'../images/sprite.png',
         cssName: 'sprite.scss'
@@ -54,6 +54,15 @@ gulp.task('sprite', function (cb) {
     spriteData.css.pipe(gulp.dest('source/styles/global/'));
 
     cb();
+});
+
+/* --------  js -------- */
+gulp.task('js', function() {
+    return gulp.src([
+        'node_modules/bootstrap/dist/js/bootstrap.min.js',
+        'node_modules/jquery/dist/jquery.min.js',
+        'source/js/common.js'
+    ]).pipe(gulp.dest('build/js'));
 });
 
 /*---------------------- Delete ------------------------*/
@@ -75,19 +84,26 @@ gulp.task('copy:images', function () {
         .pipe(gulp.dest('build/images'));
 });
 
+/*---------------------- Copy Js ------------------------*/
+gulp.task('copy:js', function () {
+    return gulp.src('./source/js/**/*.*')
+        .pipe(gulp.dest('build/js'));
+});
+
 /*---------------------- Copy ------------------------*/
-gulp.task('copy', gulp.parallel('copy:fonts', 'copy:images'));
+gulp.task('copy', gulp.parallel('copy:fonts', 'copy:images', 'copy:js'));
 
 
 /* ------------ Watchers ------------- */
 gulp.task('watch', function() {
     gulp.watch('source/template/**/*.pug', gulp.series('templates:compile'));
-    gulp.watch('source/styles/**/*.scss', gulp.series('styles:compile'));
+    gulp.watch(['source/styles/**/*.scss', '!source/styles/bootstrap.scss'], gulp.series('styles:compile'));
+    
 });
 
 gulp.task('default', gulp.series(
     'clean',
-    gulp.parallel('templates:compile', 'styles:compile', 'sprite', 'copy'),
+    gulp.parallel('templates:compile', 'styles:compile', 'js', 'sprite', 'copy'),
     gulp.parallel('watch', 'server')
     )
 );
