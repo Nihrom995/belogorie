@@ -1,71 +1,33 @@
 //
    Created by Nihrom on 22.06.2017.
 header.header
-    .container
-        .header_info.row.no-gutters.align-items-center
-            .col-5
-                a.logo(href="#")
+    nav.navbar.navbar-toggleable-md
+        .container
+            a.navbar-brand.hidden-lg-up(href="#") Navbar
+            button( class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false")
+                span.navbar-toggler-icon
+
+            .collapse.navbar-collapse(id="navbarNav")
+                ul.navbar-nav
+                    li.nav-item
+                        a.nav-link(href="#") Главная
+                    li.nav-item
+                        a.nav-link(href="#") Пивоварня
+                    li.nav-item
+                        a.nav-link(href="#") Наше пиво
+                    li.nav-item
+                        a.nav-link(href="#") Галерея
+                a.navbar-brand.m-auto(href="#")
                     img(src="images/logo.png")
+                ul.navbar-nav
+                    li.nav-item
+                        a.nav-link(href="#") Где купить
+                    li.nav-item
+                        a.nav-link(href="#") Контакты
+                ul.navbar-nav.social.hidden-md-down.ml-auto
 
-            .col
-                .header_info_contacts
+                    a.nav-link(href="#"): i.fa.fa-vk
 
-                    .contact_block
-                        .contact_block_icon
-                            i.fa.fa-map-marker(aria-hidden="true")
+                    a.nav-link(href="#"): i.fa.fa-facebook
 
-                        .contact_block_content
-                            span.contact_block_content_sub_text мы находимся:
-                            address.contact_block_content_text г. Хэйхэ, ул. Хайлайнь, 181
-
-                    .contact_block
-                        .contact_block_icon
-                            i.fa.fa-clock-o(aria-hidden="true")
-
-                        .contact_block_content
-                            span.contact_block_content_sub_text мы открыты:
-                            span.contact_block_content_text 09:00 - 21:00
-
-
-                    .contact_block
-                        .contact_block_icon
-                            i.fa.fa-mobile.fa-lg(aria-hidden="true")
-
-                        .contact_block_content
-                            span.contact_block_content_sub_text свяжитесь с нами:
-                            a.contact_block_content_text(href="tel:+7(914)-956-59-86") +7(914)-956-59-86
-
-    .header_navbar
-        nav.navbar.navbar-toggleable-md.navbar-inverse.bg-primary
-            .container
-                a.navbar-brand.hidden-lg-up(href="#") Navbar
-                button( class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false")
-                    span.navbar-toggler-icon
-
-                .collapse.navbar-collapse(id="navbarNav")
-                    ul.navbar-nav.mr-auto
-                        li.nav-item
-                            a.nav-link(href="#") Главная
-                        li.nav-item.dropdown
-                            a.nav-link.dropdown-toggle(href="#" id="navbarDropdownMenuLink" data-toggle="dropdown") О стоматологии
-                            .dropdown-menu(aria-labelledby="navbarDropdownMenuLink")
-                                a.dropdown-item(href="#") О клинике
-                                a.dropdown-item(href="#") Персонал
-                                a.dropdown-item(href="#") Отделения
-                                a.dropdown-item(href="#") Город Хэйхэ
-                        li.nav-item
-                            a.nav-link(href="#") Гарантии
-                        li.nav-item
-                            a.nav-link(href="#") Услуги и цены
-                        li.nav-item
-                            a.nav-link(href="#") FAQ
-                        li.nav-item
-                            a.nav-link(href="#") Новости
-
-                    ul.navbar-nav.social.hidden-md-down
-                        li.nav-item
-                            a.nav-link(href="#"): i.fa.fa-vk
-                        li.nav-item
-                            a.nav-link(href="#"): i.fa.fa-facebook
-                        li.nav-item
-                            a.nav-link(href="#"): i.fa.fa-instagram
+                    a.nav-link(href="#"): i.fa.fa-instagram

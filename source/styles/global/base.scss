@@ -1,6 +1,7 @@
 body{
-  font-family: 'Exo 2', sans-serif;
+  font-family: $ff-main, sans-serif;
   color: $primary-color;
+  font-weight: 300;
 }
 address{
   margin-bottom: 0px;

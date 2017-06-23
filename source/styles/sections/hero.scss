@@ -1,0 +1,36 @@
+.hero{
+  background: #2c2c2c url("../images/hero-bg.jpg") center/cover no-repeat;
+  min-height: 700px;
+
+  position: relative;
+
+  &_title{
+    color:$header-inverse-color;
+    display: block;
+    @include centerer-xy();
+
+    & *{
+      text-shadow: 1px 1px 5px rgba(0,0,0, 0.4);
+      text-transform: uppercase;
+    }
+
+    & .title{
+      color:$header-inverse-color;
+      font-family: $ff-secondary;
+      font-weight: bold;
+      font-size: 2.3rem;
+
+      & .big{
+        display: block;
+        font-size: 5.125rem;
+      }
+    }
+
+    & .sub_title{
+      font-weight: 500;
+      letter-spacing: 2px;
+      font-size: 1.125rem;
+    }
+  }
+
+}
