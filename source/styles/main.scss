@@ -3,8 +3,12 @@
 @import "global/vars";
 @import "global/mixins";
 @import "global/base";
+@import "global/common";
+@import "global/sprite";
 
 
 
 @import "sections/header";
 @import "sections/hero";
+@import "sections/about_us";
+@import "sections/footer";
