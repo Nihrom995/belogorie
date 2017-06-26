@@ -3,7 +3,41 @@ footer.footer
         .row
             .col-md-4
                 .footer_block
-                    .footer_block_title Адреса и телефоны
-                    .footer_block_content г. Благовещенск, ул. Ленина 142
+                    h5.footer_block_title Адреса и телефоны
+                    .footer_block_content
+                        | г. Благовещенск, ул. Ленина 142
                         br
-                        . г. Благовещенск, с. Белогорье, ул. Набережная 30
+                        | г. Благовещенск, с. Белогорье, ул. Набережная 30
+            .col-md-4
+                .footer_block
+                    h5.footer_block_title Мы в социальных сетях
+                    .footer_block_content
+                        .footer_block_content_social
+                            a.fa-stack.fa-2x(href="#")
+                                i.fa.fa-circle.fa-stack-2x
+                                i.fa.fa-vk.fa-stack-1x.fa-inverse
+                            a.fa-stack.fa-2x(href="#")
+                                i.fa.fa-circle.fa-stack-2x
+                                i.fa.fa-instagram.fa-stack-1x.fa-inverse
+                            a.fa-stack.fa-2x(href="#")
+                                i.fa.fa-circle.fa-stack-2x
+                                i.fa.fa-facebook.fa-stack-1x.fa-inverse
+
+                        p
+                            i подписывайте на нас и следите за последними новинками нашей пивоварни
+            .col-md-4
+                .footer_block
+                    h5.footer_block_title Есть вопросы? Свяжитесь с нами!
+                    .footer_block_content
+                        form
+                            .input-group
+                                input(type="text" class="form-control" placeholder="+7(999) 999-99-99")
+                                .input-group-btn
+                                    button.btn.btn-secondary(type="button") Перезвонить мне!
+
+                        i нажимая кнопку «Перезвонить мне!» вы соглашаетесь с
+                            a(href="#") политикой конфеденциальности
+
+.copyright
+    .text-center &copy 2017 Дизайн и разработка -
+        a(href="//darkstudio.pro/") Dark Studio

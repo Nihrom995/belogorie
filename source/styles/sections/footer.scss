@@ -1,6 +1,58 @@
 .footer{
+  margin-top: 30px;
   background: $bg-footer;
   padding: 60px 0;
+  color:$secondary-color;
 
+  .container{
 
+    margin: 0 auto;
+  }
+
+  & .row > [class*="col-"] + [class*="col-"]{
+    border-left:1px solid #797977;
+  }
+
+  &_block{
+    padding:0 15px;
+    text-align: center;
+
+    &_title{
+      text-transform: uppercase;
+      color:#fff;
+      font-family: $ff-secondary;
+      margin-bottom: 20px;
+    }
+
+    &_content{
+      form{
+        margin: 30px 0 ;
+      }
+
+      &_social{
+        margin: 20px 30px;
+
+        & a{
+          color: $secondary-color;
+          transition: .3s;
+
+          &:hover{
+            color: $inverse-color;
+          }
+
+          & i.fa-inverse{
+            color:$bg-footer;
+          }
+
+        }
+      }
+    }
+  }
+}
+
+.copyright{
+  background: $bg-copyright;
+  color: $secondary-color;
+  font-size: 1rem;
+  padding: 30px 0;
 }
