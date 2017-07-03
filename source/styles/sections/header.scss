@@ -4,8 +4,40 @@
   margin-bottom: -120px;
   position: relative;
   z-index: 10;
+  .navbar-brand{
+    max-width: 195px;
+    & img{
+      vertical-align: baseline;
+      max-width: 100%;
+    }
+  }
   .navbar-nav{
     align-items: center;
+    position: relative;
+    width: 445px;
+
+    &::after{
+      content: '';
+      position: absolute;
+      display: block;
+      height: 44px;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      z-index: 1;
+    }
+    &:first-child::after{
+      right: -20px;
+      left:-10px;
+      border-right: 0px;
+    }
+    &:last-child::after{
+      left: -20px;
+      right: -10px;
+      border-left: 0px;
+    }
+    & .nav-item{
+      position: relative;
+      z-index: 10;
+    }
   }
   .nav-link{
     font-family: $ff-secondary;
@@ -16,6 +48,11 @@
     text-transform: uppercase;
     position: relative;
     padding-right: 1.4rem !important;
+    transition: .4s;
+
+    &:hover{
+      color: #dad089;
+    }
   }
 
   .nav-item + .nav-item > .nav-link::before{
@@ -30,8 +67,28 @@
     border-radius: 5px;
 
   }
+  .navbar-nav .social.nav-item{
+    padding-left: 5px;
 
-  .navbar-nav.social .nav-link{
-    padding-right: .5rem !important;
+    &:first-child{
+      margin-left: auto;
+    }
+
+    & a{
+      font-size: 1.05rem;
+      color: $white;
+      transition: .4s;
+
+
+      &:hover{
+        color: #dad089;
+      }
+
+      & .fa-inverse{
+        color: $primary-color;
+      }
+    }
   }
+
+
 }

@@ -1,0 +1,35 @@
+.beer{
+
+  &_block_content{
+    margin: 20px auto;
+    max-width: 220px;
+    border: 2px solid #dedede;
+    padding: 10px;
+    background: #fff;
+    position: relative;
+
+
+    &::before{
+      content: " ";
+      position: absolute;
+      z-index: 2;
+
+      top: -14px;
+      left: -14px;
+      right: -14px;
+      bottom: -14px;
+      border: 8px solid $border-block-color;
+      transition: .4s;
+    }
+
+    &:hover{
+      border-color: $inverse-color;
+      &::before{
+        border-color: $inverse-color;
+
+      }
+    }
+  }
+
+
+}

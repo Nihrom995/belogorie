@@ -1,10 +1,13 @@
 .hero{
   background: #2c2c2c url("../images/hero-bg.jpg") center/cover no-repeat;
+
   min-height: 800px;
 
   position: relative;
 
-
+  & .YTPOverlay{
+    background-color:  rgba(0,0,0,.3) ;
+  }
 
   &_title{
     color:$header-inverse-color;
@@ -43,7 +46,8 @@
     margin-top: 40px;
     opacity: 0;
     transition: .3s;
-    animation: scroll 2.3s ease-in-out infinite;
+    animation: scroll 2.3s ease-in-out;
+    animation-iteration-count: 3;
     cursor: pointer;
 
   }
@@ -51,7 +55,8 @@
   @keyframes scroll {
 
     20% { opacity: 1;  margin-top: 20px;}
-    100% {margin-top: 130px;}
+    100% {margin-top: 160px;}
+
   }
 
 

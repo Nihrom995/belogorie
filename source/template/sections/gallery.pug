@@ -1,0 +1,13 @@
+section.gallery.padding_wrap
+        .title.text-center
+            h2.text-uppercase Галерея
+            .icon_gallery.title_image
+
+        .gallery_block
+            .row.no-gutters
+                - for (var i = 1; i <= 12; i++)
+                    .col-xl-2.col-lg-3
+                        a(class="fancybox" data-fancybox="gallery" href="images/gallery/"+ i +".jpg" data-aos="zoom-in" data-aos-delay=""+ i +"00")
+                            .fancybox_overlay
+                                i.fancybox_overlay_icon_hover.fa.fa-camera-retro.fa-4x
+                            img(src="images/gallery/thumbs/"+ i +".jpg" width="100%")

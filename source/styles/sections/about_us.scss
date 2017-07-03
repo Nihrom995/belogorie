@@ -29,20 +29,8 @@
     }
 
     //Icons
-    & [class*="icon-"]{
+    & [class*="icon_"]{
       margin: 10px auto;
-    }
-    .icon-with{
-      @include sprite($with2008);
-    }
-    .icon-profi{
-      @include sprite($profi);
-    }
-    .icon-pivovar{
-      @include sprite($pivovar);
-    }
-    .icon-life{
-      @include sprite($life);
     }
   }
 

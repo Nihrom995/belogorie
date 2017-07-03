@@ -3,6 +3,7 @@ body{
   color: $primary-color;
   font-weight: 400;
   font-size: 0.9rem;
+  overflow-x: hidden;
 }
 address{
   margin-bottom: 0px;
@@ -14,4 +15,7 @@ input:focus{
 }
 button{
   cursor: pointer;
+}
+*:focus{
+  outline: 0;
 }

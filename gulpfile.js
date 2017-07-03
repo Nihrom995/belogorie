@@ -40,22 +40,7 @@ gulp.task('styles:compile', function () {
         .pipe(rename("main.min.css"))
         .pipe(gulp.dest('build/css'));
 });
-gulp.task('styles:compile:bootstrap', function () {
 
-    return bootstrap = gulp.src('source/styles/bootstrap.scss')
-        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(rename("bootstrap.min.css"))
-        .pipe(gulp.dest('build/css'));
-
-});
-gulp.task('styles:compile:aos', function () {
-
-    return bootstrap = gulp.src('source/styles/aos.scss')
-        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(rename("aos.min.css"))
-        .pipe(gulp.dest('build/css'));
-
-});
 /*---------------------- Sprites ------------------------*/
 gulp.task('sprite', function (cb) {
 
@@ -77,6 +62,7 @@ gulp.task('js', function() {
         'node_modules/jquery/dist/jquery.min.js',
         'node_modules/bootstrap/dist/js/bootstrap.min.js',
         'node_modules/aos/dist/aos.js',
+        'source/js/jquery.mb.YTPlayer.min.js',
         'source/js/common.js'
     ]).pipe(gulp.dest('build/js'));
 });
@@ -114,13 +100,11 @@ gulp.task('copy', gulp.parallel('copy:fonts', 'copy:images', 'copy:js'));
 gulp.task('watch', function() {
     gulp.watch('source/template/**/*.pug', gulp.series('templates:compile'));
     gulp.watch(['source/styles/**/*.scss', '!source/styles/bootstrap.scss'], gulp.series('styles:compile'));
-    gulp.watch('source/styles/bootstrap.scss', gulp.series('styles:compile:bootstrap'));
-    gulp.watch('source/styles/aos.scss', gulp.series('styles:compile:aos'));
 });
 
 gulp.task('default', gulp.series(
     'clean',
-    gulp.parallel('templates:compile', 'styles:compile', 'styles:compile:bootstrap', 'styles:compile:aos', 'js', 'sprite', 'copy'),
+    gulp.parallel('templates:compile', 'styles:compile', 'js', 'sprite', 'copy'),
     gulp.parallel('watch', 'server')
     )
 );

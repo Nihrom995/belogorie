@@ -1,15 +1,30 @@
+@import "global/vars";
+
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
 @import "../../node_modules/font-awesome/scss/font-awesome";
 
-@import "global/vars";
+@import "../../node_modules/aos/src/sass/aos";
+
+@import "jquery.fancybox.min";
+
+
+
 @import "global/mixins";
 @import "global/base";
-@import "global/common";
 @import "global/sprite";
+@import "global/icons";
+@import "global/common";
+
 
 
 
 @import "sections/header";
 @import "sections/hero";
 @import "sections/about_us";
+@import "sections/beer";
+@import "sections/gallery";
 @import "sections/shops";
 @import "sections/footer";
+

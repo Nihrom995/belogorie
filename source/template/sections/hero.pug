@@ -1,6 +1,9 @@
 section.hero
-
-    .hero_title.text-center
+    a(id="bgndVideo"
+    class="player"
+    data-property="{videoURL:'https://youtu.be/2zHt1Nh2gwU', containment:'.hero',autoPlay:true, mute:true, startAt:0, opacity:1, showControls:false, stopMovieOnBlur:false}"
+    )
+    .hero_title.text-center(data-aos="fade-in")
         h1.title Крафтовая пивоварня
             span.big Белогорье
         span.sub_title.circle-border Время варить

@@ -1,0 +1,66 @@
+section.beer.padding_wrap(id="beer")
+    .container
+        .title.text-center
+            h2.text-uppercase Наше пиво
+            .icon_beer.title_image
+
+        .beer_block.carousel.slide(id="beer_slider" data-ride="carousel")
+            ol.carousel-indicators
+                li(data-target="#beer_slider" data-slide-to="0" class="active")
+                li(data-target="#beer_slider" data-slide-to="1")
+                li(data-target="#beer_slider" data-slide-to="2")
+
+            .carousel-inner(role="listbox")
+                .carousel-item.active
+                    .col-md-3
+                        a.beer_block_content(class="fancybox" data-fancybox="beer" href="images/gallery/1.jpg" data-aos="zoom-in" data-aos-delay="100")
+                            .fancybox_overlay_inverse
+                                .fancybox_overlay_inverse_text Подробнее
+                            img(src="images/beer/amur-batushka.jpg" width="100%")
+
+                    .col-md-3
+                        a.beer_block_content(class="fancybox" data-fancybox="beer" href="images/gallery/1.jpg" data-aos="zoom-in" data-aos-delay="100")
+                            .fancybox_overlay_inverse
+                                .fancybox_overlay_inverse_text Подробнее
+                            img(src="images/beer/blanche.jpg" width="100%")
+
+                    .col-md-3
+                        a.beer_block_content(class="fancybox" data-fancybox="beer" href="images/gallery/1.jpg" data-aos="zoom-in" data-aos-delay="100")
+                            .fancybox_overlay_inverse
+                                .fancybox_overlay_inverse_text Подробнее
+                            img(src="images/beer/kazachie.jpg" width="100%")
+
+                    .col-md-3
+                        a.beer_block_content(class="fancybox" data-fancybox="beer" href="images/gallery/1.jpg" data-aos="zoom-in" data-aos-delay="100")
+                            .fancybox_overlay_inverse
+                                .fancybox_overlay_inverse_text Подробнее
+                            img(src="images/beer/lcitra.jpg" width="100%")
+
+                .carousel-item
+                    .col
+                        a.beer_block_content(class="fancybox" data-fancybox="beer" href="images/gallery/1.jpg" data-aos="zoom-in" data-aos-delay="100")
+                            .fancybox_overlay_inverse
+                                .fancybox_overlay_inverse_text Подробнее
+                            img(src="images/beer/poyarkov.jpg" width="100%")
+
+                    .col
+                        a.beer_block_content(class="fancybox" data-fancybox="beer" href="images/gallery/1.jpg" data-aos="zoom-in" data-aos-delay="100")
+                            .fancybox_overlay_inverse
+                                .fancybox_overlay_inverse_text Подробнее
+                            img(src="images/beer/sakura.jpg" width="100%")
+
+                    .col
+                        a.beer_block_content(class="fancybox" data-fancybox="beer" href="images/gallery/1.jpg" data-aos="zoom-in" data-aos-delay="100")
+                            .fancybox_overlay_inverse
+                                .fancybox_overlay_inverse_text Подробнее
+                            img(src="images/beer/veresk-el.jpg" width="100%")
+
+
+        //-
+            a.carousel-control-prev(href="#beer_slider" role="button" data-slide="prev")
+                span.carousel-control-prev-icon(aria-hidden="true")
+                    span.sr-only Previous
+
+            a.carousel-control-next(href="#beer_slider" role="button" data-slide="next")
+                span.carousel-control-next-icon(aria-hidden="true")
+                    span.sr-only Next

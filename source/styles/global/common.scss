@@ -40,7 +40,14 @@
   }
 }
 
-
+/**
+  Title image
+*/
+.title{
+  &_image{
+    margin: 10px auto;
+  }
+}
 /**
   Border Titles
 */
@@ -64,4 +71,86 @@
     left: calc(50% - 35px);
   }
 
+}
+
+/*
+  Fancybox
+*/
+.fancybox{
+  display: block;
+  position: relative;
+
+  &_overlay{
+    position: absolute;
+    top: 0;
+    left:0 ;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(199, 179, 108, .5);
+    transition: .5s;
+
+    &_icon_hover{
+      opacity: 0;
+      color: rgba(199, 179, 108, .8);
+      transition: .7s;
+      @include centerer-x();
+      bottom: 0;
+    }
+
+  }
+
+
+  &:hover &_overlay{
+    background-color: transparent;
+
+    &_icon_hover{
+      opacity: 1;
+      @include centerer-xy();
+      bottom: initial;
+    }
+  }
+
+  &_overlay_inverse{
+    position: absolute;
+    visibility: hidden;
+  }
+
+  &:hover  &_overlay_inverse{
+    position: absolute;
+    visibility: visible;
+    top: 0;
+    left:0 ;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(199, 179, 108, .5);
+    transition: .5s;
+
+    &_text{
+      @include centerer-xy();
+      text-transform: uppercase;
+      color:#fff;
+      text-shadow: 1px 1px 3px #232323;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+/*
+  Carousel
+*/
+.carousel-indicators{
+  bottom: -40px;
+  li{
+    background-color: rgba(199, 179, 108, 0.50);
+    &:hover{
+      background-color: rgba(199, 179, 108, 1);
+    }
+  }
+  .active{
+    background-color: rgba(199, 179, 108, 1);
+  }
 }
